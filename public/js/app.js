@@ -5379,9 +5379,7 @@ Dropzone.autoDiscover = false;
     var myDropzone = new Dropzone["default"]('#drophere', {
       url: '/article/images/upload',
       headers: {
-        'X-CSRF-TOKEN': csrfToken
-      },
-      params: {
+        'X-CSRF-TOKEN': csrfToken,
         uniqueSecret: uniqueSecret
       }
     });

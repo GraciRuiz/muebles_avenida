@@ -32,7 +32,7 @@ class ArticleController extends Controller
     public function uploadImages(Request $request)
     {
         
-     $uniqueSecret = $request->input('uniqueSecret');
+     $uniqueSecret = $request->header('uniqueSecret');
      $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
      session()->push("images.{$uniqueSecret}", $fileName);
      return response()->json(
@@ -50,19 +50,16 @@ class ArticleController extends Controller
         $article = Auth::user()->articles()->create($request->all());
         //Attach para la relacion articles con tags.
         $article->tags()->attach($request->tags);
-       
-        $uniqueSecret = $request->input('uniqueSecret');
-     
         $uniqueSecret = $request->input('uniqueSecret');
         $images = session()->get("images.{$uniqueSecret}");
-
+      
         foreach($images as $image){
             $i = new ArticleImage;
             $fileName = basename($image);
-            $newFilePath = "public/articles/{$a->id}/{$fileName}";
+            $newFilePath = "public/articles/{$article->id}/{$fileName}";
             Storage::move($image,$newFilePath);
             $i->file = $newFilePath;
-            $i->ad_id = $a->id;
+            $i->article_id = $article->id;
             $i->save();
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));

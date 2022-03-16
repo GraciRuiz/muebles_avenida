@@ -14,8 +14,6 @@ Dropzone.autoDiscover = false;
                 url: '/article/images/upload',
                 headers: {
                   'X-CSRF-TOKEN': csrfToken,
-                },
-                params: {
                   uniqueSecret: uniqueSecret
                 }
             });

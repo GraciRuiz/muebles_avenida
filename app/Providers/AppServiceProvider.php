@@ -30,13 +30,14 @@ class AppServiceProvider extends ServiceProvider
         try {
             $categories= Category::all();
             View::share('categories', $categories);
+            $tags = Tag::all();
+            View::share('tags', $tags);
            
         } catch (\Throwable $th) {
         dump("ALERT: Recuerda lanzar las migrations cuando acabes el clone");
         }
             Paginator::useBootstrap();
         
-            $tags = Tag::all();
-            View::share('tags', $tags);
+           
     }
 }
