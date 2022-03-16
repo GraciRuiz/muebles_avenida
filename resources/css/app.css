@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './style.css';
+@import 'dropzone/dist/basic';
+@import 'dropzone/dist/dropzone';

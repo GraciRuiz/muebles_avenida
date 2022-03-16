@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(248, 229, 209);
+}
+
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 60px;
+}
+
+h3 {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.scrollNav {
+    box-shadow: -5px -5px 20px #fff, 5px 5px 20px #04080F;
+    transition: 0.5s all;
+    background-color: #521010;
+    color: white !important;
+}
